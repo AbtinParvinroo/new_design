@@ -1,0 +1,1 @@
+from .resume_analyzer import ResumeAnalyzer
