@@ -2,21 +2,19 @@
 import logging
 from pathlib import Path
 from typing import Optional, Union
-
-from core.models import (
+from resolver.core.models import (
     FileValidatorConfig,
     WordResolverConfig,
     PDFResolverConfig,
     PostProcessorConfig
 )
-from validators.file_validator import FileValidator
-from extractors.pdf import PDFResolver
-from extractors.docx import WordResolver
-from processors.post_processor import PostProcessor
-from .result import PipelineResult
+from resolver.validators.file_validator import FileValidator
+from resolver.extractors.pdf import PDFResolver
+from resolver.extractors.docx import WordResolver
+from resolver.processors.post_processor import PostProcessor
+from resolver.pipeline.result import PipelineResult
 
 logger = logging.getLogger(__name__)
-
 
 class DocumentPipeline:
     def __init__(

@@ -3,17 +3,15 @@ import logging
 import time
 from dataclasses import asdict
 from typing import Optional
-
-from core.models import PostProcessorConfig, PostProcessingStats, PostProcessingResult
-from core.exceptions import ValidationError, ProcessingError
-from .language_detector import detect_language
-from .normalizer import TextNormalizer
-from .ocr_corrector import OcrCorrector
-from .section_extractor import SectionExtractor
-from .pipeline import Pipeline
+from resolver.core.models import PostProcessorConfig, PostProcessingStats, PostProcessingResult
+from resolver.core.exceptions import ValidationError, ProcessingError
+from resolver.processors.language_detector import detect_language
+from resolver.processors.normalizer import TextNormalizer
+from resolver.processors.ocr_corrector import OcrCorrector
+from resolver.processors.section_extractor import SectionExtractor
+from resolver.processors.pipeline import Pipeline
 
 logger = logging.getLogger(__name__)
-
 
 class PostProcessor:
     def __init__(self, config: Optional[PostProcessorConfig] = None):

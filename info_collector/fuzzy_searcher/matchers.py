@@ -1,12 +1,12 @@
 from __future__ import annotations
-from data_models import OccupationRecord, CandidateMatch
-from normalization import OccupationNormalizer
-from scoring import ScorerRegistry
-from index import OccupationIndex
-from config import ConfigManager
+from fuzzy_searcher.data_models import OccupationRecord, CandidateMatch
+from fuzzy_searcher.normalization import OccupationNormalizer
+from fuzzy_searcher.scoring import ScorerRegistry
+from fuzzy_searcher.index import OccupationIndex
+from fuzzy_searcher.config import ConfigManager
+from fuzzy_searcher.enums import MatchType
 from typing import Dict, List
 from rapidfuzz import process
-from enums import MatchType
 
 class ExactMatcher:
     def __init__(

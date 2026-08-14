@@ -1,11 +1,9 @@
 # processors/pipeline.py
 import logging
 from typing import Callable, Dict, Any
-
-from core.models import PostProcessorConfig
+from resolver.core.models import PostProcessorConfig
 
 logger = logging.getLogger(__name__)
-
 
 class Pipeline:
     def __init__(self, config: PostProcessorConfig):

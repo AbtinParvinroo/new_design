@@ -1,14 +1,11 @@
 # validators/pdf_validator.py
 import logging
 from pathlib import Path
-
 from pypdf import PdfReader
 from pypdf.errors import PdfReadError
-
-from core.exceptions import InvalidPdfError, PDFValidationError, EncryptedPDFError
+from resolver.core.exceptions import InvalidPdfError, PDFValidationError, EncryptedPDFError
 
 logger = logging.getLogger(__name__)
-
 
 class PDFValidator:
     @staticmethod

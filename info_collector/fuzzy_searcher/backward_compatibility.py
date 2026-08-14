@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Any, Dict, List, Optional, Sequence
-from service import OccupationService
+from fuzzy_searcher.service import OccupationService
 
 class FuzzySearcher:
     def __init__(

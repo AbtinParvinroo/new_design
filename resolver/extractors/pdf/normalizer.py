@@ -1,8 +1,7 @@
 # extractors/pdf/normalizer.py
 import re
 import unicodedata
-
-from core.models import PDFResolverConfig
+from resolver.core.models import PDFResolverConfig
 
 
 class TextNormalizer:

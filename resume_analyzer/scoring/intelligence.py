@@ -1,14 +1,14 @@
 from __future__ import annotations
-from models.output_models import RawMetrics, CareerIntelligence
-from models.domain_models import JobInterval
-from core.config import ResumeAnalyzerConfig
-from .growth import calculate_growth_score
-from .stability import calculate_stability_score
-from .skill import calculate_skill_score
-from .direction import calculate_direction_score
-from .seniority import calculate_seniority_score
-from .momentum import calculate_momentum_score
-from .risk import calculate_risk_score
+from resume_analyzer.models.output_models import RawMetrics, CareerIntelligence
+from resume_analyzer.models.domain_models import JobInterval
+from resume_analyzer.core.config import ResumeAnalyzerConfig
+from resume_analyzer.scoring.growth import calculate_growth_score
+from resume_analyzer.scoring.stability import calculate_stability_score
+from resume_analyzer.scoring.skill import calculate_skill_score
+from resume_analyzer.scoring.direction import calculate_direction_score
+from resume_analyzer.scoring.seniority import calculate_seniority_score
+from resume_analyzer.scoring.momentum import calculate_momentum_score
+from resume_analyzer.scoring.risk import calculate_risk_score
 
 def build_career_intelligence(raw: RawMetrics, jobs: list[JobInterval], config: ResumeAnalyzerConfig) -> CareerIntelligence:
     growth_score = calculate_growth_score(raw, config)

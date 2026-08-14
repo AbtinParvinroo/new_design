@@ -1,9 +1,9 @@
 from __future__ import annotations
 from datetime import datetime, timezone
 from typing import list
-from models.domain_models import JobInterval
-from .duration import calculate_duration
-from core.config import ResumeAnalyzerConfig
+from resume_analyzer.models.domain_models import JobInterval
+from resume_analyzer.metrics.duration import calculate_duration
+from resume_analyzer.core.config import ResumeAnalyzerConfig
 
 def merge_intervals(jobs: list[JobInterval], config: ResumeAnalyzerConfig) -> list[JobInterval]:
     if not jobs:

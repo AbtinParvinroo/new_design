@@ -2,9 +2,8 @@
 import re
 import logging
 from typing import Dict
-
-from core.models import PostProcessorConfig
-from core.exceptions import SectionExtractionError
+from resolver.core.models import PostProcessorConfig
+from resolver.core.exceptions import SectionExtractionError
 
 logger = logging.getLogger(__name__)
 

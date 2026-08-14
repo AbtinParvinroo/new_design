@@ -1,32 +1,24 @@
 from __future__ import annotations
-import logging
-from datetime import datetime, timezone
-from typing import Optional
-from dateutil import parser as date_parser
-from core.config import ResumeAnalyzerConfig
-from core.exceptions import DateParsingError
+from typing import Any, Optional
+import math
 
-logger = logging.getLogger(__name__)
-
-def parse_date(value: Optional[str]) -> Optional[datetime]:
-    if not value:
+def parse_duration(value: Any) -> Optional[float]:
+    if value is None:
         return None
+
+    if isinstance(value, bool):
+        return None
+
     try:
-        parsed = date_parser.parse(value)
-    except Exception:
-        return None
-    now = datetime.now(parsed.tzinfo or timezone.utc)
-    if not parsed.tzinfo:
-        parsed = parsed.replace(tzinfo=timezone.utc)
-    if parsed > now:
-        return None
-    return parsed
+        duration = float(value)
 
-def calculate_duration(start_date: Optional[datetime], end_date: Optional[datetime], config: ResumeAnalyzerConfig) -> Optional[float]:
-    if start_date is None:
+    except (TypeError, ValueError):
         return None
-    actual_end_date = end_date or datetime.now(start_date.tzinfo or timezone.utc)
-    days = (actual_end_date - start_date).days
-    if days < 0:
+
+    if not math.isfinite(duration):
         return None
-    return days / config.days_per_month
+
+    if duration < 0:
+        return None
+
+    return duration

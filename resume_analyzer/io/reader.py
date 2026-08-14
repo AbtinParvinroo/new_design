@@ -5,8 +5,8 @@ import logging
 import sys
 from io import StringIO
 import yaml
-from core.config import ResumeAnalyzerConfig
-from models.input_models import ResumeInput
+from resume_analyzer.core.config import ResumeAnalyzerConfig
+from resume_analyzer.models.input_models import ResumeInput
 
 logger = logging.getLogger(__name__)
 

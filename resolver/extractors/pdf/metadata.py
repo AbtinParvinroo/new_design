@@ -1,8 +1,6 @@
 # extractors/pdf/metadata.py
 from pypdf import PdfReader
-
-from core.models import PDFMetadata
-
+from resolver.core.models import PDFMetadata
 
 class PDFMetadataExtractor:
     @staticmethod

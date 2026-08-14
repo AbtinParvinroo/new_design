@@ -3,16 +3,14 @@ import logging
 import time
 from pathlib import Path
 from typing import Optional
-
-from core.models import FileValidatorConfig, FileValidationResult
-from core.exceptions import FileValidationError, InvalidFileTypeError
-from core.constants import ALLOWED_TYPES
-from .pdf_validator import PDFValidator
-from .docx_validator import DOCXValidator
-from .magic_detector import MagicDetector
+from resolver.core.models import FileValidatorConfig, FileValidationResult
+from resolver.core.exceptions import FileValidationError, InvalidFileTypeError
+from resolver.core.constants import ALLOWED_TYPES
+from resolver.validators.pdf_validator import PDFValidator
+from resolver.validators.docx_validator import DOCXValidator
+from resolver.validators.magic_detector import MagicDetector
 
 logger = logging.getLogger(__name__)
-
 
 class FileValidator:
     def __init__(self, config: Optional[FileValidatorConfig] = None):

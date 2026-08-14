@@ -1,5 +1,5 @@
 from __future__ import annotations
-from config import ConfigManager
+from fuzzy_searcher.config import ConfigManager
 from typing import Optional
 
 class InputValidator:

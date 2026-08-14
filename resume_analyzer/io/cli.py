@@ -2,9 +2,9 @@ from __future__ import annotations
 import logging
 import sys
 import yaml
-from core.config import ResumeAnalyzerConfig
-from analyzer.resume_analyzer import ResumeAnalyzer
-from .reader import read_input
+from resume_analyzer.core.config import ResumeAnalyzerConfig
+from resume_analyzer.analyzer.resume_analyzer import ResumeAnalyzer
+from resume_analyzer.io.reader import read_input
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

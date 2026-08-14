@@ -1,7 +1,7 @@
 from __future__ import annotations
-from models.domain_models import JobInterval
-from core.config import ResumeAnalyzerConfig
-from core.utils import normalize_score
+from resume_analyzer.models.domain_models import JobInterval
+from resume_analyzer.core.config import ResumeAnalyzerConfig
+from resume_analyzer.core.utils import normalize_score
 
 def calculate_direction_score(jobs: list[JobInterval], config: ResumeAnalyzerConfig) -> float:
     titles = [job.event.title for job in jobs if job.event.title]

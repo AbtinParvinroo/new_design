@@ -1,8 +1,8 @@
 from __future__ import annotations
+from fuzzy_searcher.data_models import OccupationRecord
+from fuzzy_searcher.config import ConfigManager
 from psycopg2 import OperationalError, pool
-from data_models import OccupationRecord
 from typing import Any, List
-from config import ConfigManager
 import logging
 import json
 import time

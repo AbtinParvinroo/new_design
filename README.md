@@ -1,5 +1,4 @@
-برای مشاغل ESCO و fuzzy search
-تغییر duration
+حل باگا
 نوشتن pipeline
 داکرایز
 تست

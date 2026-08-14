@@ -1,7 +1,7 @@
 from __future__ import annotations
-from models.output_models import RawMetrics
-from core.config import ResumeAnalyzerConfig
-from core.utils import normalize_score
+from resume_analyzer.models.output_models import RawMetrics
+from resume_analyzer.core.config import ResumeAnalyzerConfig
+from resume_analyzer.core.utils import normalize_score
 
 def calculate_growth_score(raw: RawMetrics, config: ResumeAnalyzerConfig) -> float:
     growth_score = (

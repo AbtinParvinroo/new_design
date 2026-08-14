@@ -1,13 +1,13 @@
 from __future__ import annotations
 from statistics import mean, stdev
-from models.domain_models import JobInterval
-from models.input_models import ResumeEvent
-from models.output_models import RawMetrics
-from core.config import ResumeAnalyzerConfig
-from .duration import calculate_duration
-from .intervals import calculate_job_gaps
-from .statistics import linear_regression_slope, pearson_correlation
-from .progression import calculate_level_progression
+from resume_analyzer.models.domain_models import JobInterval
+from resume_analyzer.models.input_models import ResumeEvent
+from resume_analyzer.models.output_models import RawMetrics
+from resume_analyzer.core.config import ResumeAnalyzerConfig
+from resume_analyzer.metrics.duration import calculate_duration
+from resume_analyzer.metrics.intervals import calculate_job_gaps
+from resume_analyzer.metrics.statistics import linear_regression_slope, pearson_correlation
+from resume_analyzer.metrics.progression import calculate_level_progression
 
 def calculate_raw_metrics(jobs: list[JobInterval], academic_events: list[ResumeEvent], config: ResumeAnalyzerConfig) -> RawMetrics:
     durations = [job.duration_months for job in jobs]

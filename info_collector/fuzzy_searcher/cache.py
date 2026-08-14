@@ -2,12 +2,12 @@ from __future__ import annotations
 from redis.exceptions import RedisError, TimeoutError as RedisTimeoutError
 from redis.exceptions import ConnectionError as RedisConnectionError
 from typing import Any, Dict, List, Optional, Sequence, Tuple
+from fuzzy_searcher.enums import ResolutionStatus
+from fuzzy_searcher.config import ConfigManager
 import logging
 import hashlib
 import redis
 import json
-from config import ConfigManager
-from enums import ResolutionStatus
 
 class OccupationCache:
     def __init__(

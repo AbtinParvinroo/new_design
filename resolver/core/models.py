@@ -1,9 +1,7 @@
 # core/models.py
 from __future__ import annotations
-
 from dataclasses import dataclass, field
 from typing import Optional, List, Dict, Any
-
 
 @dataclass(frozen=True)
 class FileValidatorConfig:
@@ -19,7 +17,6 @@ class FileValidatorConfig:
         object.__setattr__(self, 'max_file_size_bytes', self.max_file_size_mb * 1024 * 1024)
         object.__setattr__(self, 'max_uncompressed_size_bytes', self.max_uncompressed_size_mb * 1024 * 1024)
 
-
 @dataclass
 class FileValidationResult:
     valid: bool
@@ -29,7 +26,6 @@ class FileValidationResult:
     validation_time: float = 0.0
     validation_stage: str = "initialization"
     failure_reason: Optional[str] = None
-
 
 @dataclass(frozen=True, slots=True)
 class WordResolverConfig:
@@ -53,7 +49,6 @@ class WordMetadata:
     created: Optional[str]
     modified: Optional[str]
 
-
 @dataclass(frozen=True, slots=True)
 class WordExtractionResult:
     text: str
@@ -68,7 +63,6 @@ class WordExtractionResult:
     health_status: str
     success: bool
 
-
 @dataclass(frozen=True, slots=True)
 class PDFResolverConfig:
     max_pages: int = 1_000
@@ -77,7 +71,6 @@ class PDFResolverConfig:
     normalize_unicode: bool = True
     normalize_whitespace: bool = True
     keep_empty_pages: bool = False
-
 
 @dataclass(frozen=True, slots=True)
 class PDFMetadata:
@@ -90,7 +83,6 @@ class PDFMetadata:
     creation_date: Optional[str]
     modification_date: Optional[str]
 
-
 @dataclass(frozen=True, slots=True)
 class PDFExtractionResult:
     text: str
@@ -101,7 +93,6 @@ class PDFExtractionResult:
     failed_pages: List[int]
     metadata: PDFMetadata
     extraction_time: float
-
 
 @dataclass(slots=True, frozen=True)
 class PostProcessorConfig:
@@ -138,7 +129,6 @@ class PostProcessorConfig:
         "certificates": ["certificates", "certifications", "گواهینامه‌ها"]
     })
 
-
 @dataclass
 class PostProcessingStats:
     unicode_changes: int = 0
@@ -153,7 +143,6 @@ class PostProcessingStats:
     text_reduction_ratio: float = 0.0
     sections_found: int = 0
     detected_language: str = "en"
-
 
 @dataclass
 class PostProcessingResult:

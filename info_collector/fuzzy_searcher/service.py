@@ -1,14 +1,14 @@
 from __future__ import annotations
-from repository import OccupationRepository, PostgreSQLOccupationRepository
+from fuzzy_searcher.repository import OccupationRepository, PostgreSQLOccupationRepository
+from fuzzy_searcher.config import ConfigManager, LoggerFactory
 from typing import Any, Dict, List, Optional, Sequence, Tuple
-from config import ConfigManager, LoggerFactory
-from normalization import OccupationNormalizer
-from resolver import OccupationResolver
-from validation import InputValidator
-from service import OccupationService
-from matrics import MetricsTracker
-from cache import OccupationCache
-from index import OccupationIndex
+from fuzzy_searcher.normalization import OccupationNormalizer
+from fuzzy_searcher.resolver import OccupationResolver
+from fuzzy_searcher.validation import InputValidator
+from fuzzy_searcher.service import OccupationService
+from fuzzy_searcher.matrics import MetricsTracker
+from fuzzy_searcher.cache import OccupationCache
+from fuzzy_searcher.index import OccupationIndex
 import time
 
 class OccupationService:

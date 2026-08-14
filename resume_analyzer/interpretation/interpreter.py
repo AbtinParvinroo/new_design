@@ -1,6 +1,6 @@
 from __future__ import annotations
-from models.output_models import CareerIntelligence, CareerInterpretation
-from core.config import ResumeAnalyzerConfig
+from resume_analyzer.models.output_models import CareerIntelligence, CareerInterpretation
+from resume_analyzer.core.config import ResumeAnalyzerConfig
 
 def generate_interpretation(intel: CareerIntelligence, config: ResumeAnalyzerConfig) -> CareerInterpretation:
     growth = (

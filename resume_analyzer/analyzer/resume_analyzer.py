@@ -1,15 +1,15 @@
 from __future__ import annotations
 from typing import Optional
 import logging
-from core.config import ResumeAnalyzerConfig
-from models.input_models import ResumeInput
-from models.domain_models import JobInterval
-from models.output_models import ResumeAnalysisResult
-from metrics.duration import parse_date, calculate_duration
-from metrics.intervals import merge_intervals
-from metrics.raw_metrics import calculate_raw_metrics
-from scoring.intelligence import build_career_intelligence
-from interpretation.interpreter import generate_interpretation
+from resume_analyzer.core.config import ResumeAnalyzerConfig
+from resume_analyzer.models.input_models import ResumeInput
+from resume_analyzer.models.domain_models import JobInterval
+from resume_analyzer.models.output_models import ResumeAnalysisResult
+from resume_analyzer.metrics.duration import parse_date, calculate_duration
+from resume_analyzer.metrics.intervals import merge_intervals
+from resume_analyzer.metrics.raw_metrics import calculate_raw_metrics
+from resume_analyzer.scoring.intelligence import build_career_intelligence
+from resume_analyzer.interpretation.interpreter import generate_interpretation
 
 logger = logging.getLogger(__name__)
 

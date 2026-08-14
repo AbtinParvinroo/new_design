@@ -1,9 +1,7 @@
 # pipeline/result.py
 from dataclasses import dataclass
 from typing import Optional, Union
-
-from core.models import FileValidationResult, WordExtractionResult, PDFExtractionResult, PostProcessingResult
-
+from resolver.core.models import FileValidationResult, WordExtractionResult, PDFExtractionResult, PostProcessingResult
 
 @dataclass
 class PipelineResult:

@@ -13,19 +13,19 @@ class InfoCollector:
         self.TEMPLATE = json.dumps(
             {
             "personal_information": {
-                "name": null,
-                "email": null,
-                "phone": null,
-                "website": null,
-                "location": null
+                "name": None,
+                "email": None,
+                "phone": None,
+                "website": None,
+                "location": None
             },
             "experience": [
                 {
                 "type": "work",
-                "company": null,
-                "title": null,
-                "duration_months": null,
-                "description": null,
+                "company": None,
+                "title": None,
+                "duration_months": None,
+                "description": None,
                 "responsibilities": [],
                 "achievements": [],
                 "technologies": []
@@ -33,33 +33,33 @@ class InfoCollector:
             ],
             "education": [
                 {
-                "institution": null,
-                "degree": null,
-                "field": null,
-                "duration_months": null,
+                "institution": None,
+                "degree": None,
+                "field": None,
+                "duration_months": None,
                 "achievements": []
                 }
             ],
             "projects": [
                 {
-                "name": null,
-                "description": null,
-                "duration_months": null,
+                "name": None,
+                "description": None,
+                "duration_months": None,
                 "technologies": [],
                 "achievements": []
                 }
             ],
             "skills": [
                 {
-                "name": null,
+                "name": None,
                 }
             ],
             "certificates": [
                 {
-                "name": null,
-                "issuer": null,
-                "date": null,
-                "description": null
+                "name": None,
+                "issuer": None,
+                "date": None,
+                "description": None
                 }
             ]
             }, indent=4)
@@ -80,7 +80,7 @@ class InfoCollector:
 
     def extract(self, resume_text: str) -> dict:
         prompt = (
-            """
+            f"""
             You are a structured resume information extraction system.
             Your task is to extract factual information from the provided resume text and return exactly one valid JSON object following the provided extraction template.
             Your task is EXTRACTION ONLY.
@@ -303,7 +303,9 @@ class InfoCollector:
             ]
             }
             Now extract the information from the provided resume text.
-            Return only the JSON object."""
+            Return only the JSON object.
+            {resume_text}
+            """
         )
 
         inputs = self.tokenizer(

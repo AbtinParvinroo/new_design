@@ -1,6 +1,6 @@
 # extractors/pdf/exceptions.py
 # Re-export PDF specific exceptions from core for module convenience
-from core.exceptions import (
+from resolver.core.exceptions import (
     PDFResolverError,
     InvalidPDFError,
     EncryptedPDFError,

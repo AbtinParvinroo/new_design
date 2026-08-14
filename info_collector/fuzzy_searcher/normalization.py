@@ -1,8 +1,8 @@
 from __future__ import annotations
+from fuzzy_searcher.config import ConfigManager
 from typing import Optional
 import unicodedata
 import re
-from config import ConfigManager
 
 class OccupationNormalizer:
     def __init__(self, config: ConfigManager):

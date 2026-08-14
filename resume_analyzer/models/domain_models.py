@@ -1,7 +1,7 @@
 from __future__ import annotations
 from dataclasses import dataclass
 from datetime import datetime
-from .input_models import ResumeEvent
+from resume_analyzer.models.input_models import ResumeEvent
 from typing import Optional
 
 @dataclass(slots=True)

@@ -1,6 +1,6 @@
 from __future__ import annotations
-from models.output_models import RawMetrics
-from core.config import ResumeAnalyzerConfig
+from resume_analyzer.models.output_models import RawMetrics
+from resume_analyzer.core.config import ResumeAnalyzerConfig
 
 def calculate_risk_score(raw: RawMetrics, stability_score: float, skill_score: float, config: ResumeAnalyzerConfig) -> float:
     risk = 0.0

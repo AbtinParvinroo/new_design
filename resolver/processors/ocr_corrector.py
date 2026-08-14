@@ -1,11 +1,9 @@
 # processors/ocr_corrector.py
 import logging
 from typing import Tuple
-
-from core.models import PostProcessorConfig
+from resolver.core.models import PostProcessorConfig
 
 logger = logging.getLogger(__name__)
-
 
 class OcrCorrector:
     def __init__(self, config: PostProcessorConfig):

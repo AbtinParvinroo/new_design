@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Any, Dict, Optional, Tuple
-from enums import ResolutionStatus, MatchType
+from fuzzy_searcher.enums import ResolutionStatus, MatchType
 from dataclasses import dataclass
 
 @dataclass(frozen=True)

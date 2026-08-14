@@ -2,9 +2,8 @@
 import logging
 from pathlib import Path
 from zipfile import ZipFile, BadZipFile
-
-from core.exceptions import InvalidDocxError, WordValidationError, FileValidationError
-from core.models import FileValidatorConfig
+from resolver.core.exceptions import InvalidDocxError, WordValidationError, FileValidationError
+from resolver.core.models import FileValidatorConfig
 
 logger = logging.getLogger(__name__)
 

@@ -1,6 +1,6 @@
 from __future__ import annotations
-from normalization import OccupationNormalizer
-from data_models import OccupationRecord
+from fuzzy_searcher.normalization import OccupationNormalizer
+from fuzzy_searcher.data_models import OccupationRecord
 from typing import Dict, Sequence, Tuple
 from collections import defaultdict
 

@@ -1,15 +1,15 @@
 from __future__ import annotations
-from enums import ResolutionStatus, MatchType
-from data_models import CandidateMatch, ResolutionDecision, ResolutionResult
-from matchers import ExactMatcher, AliasMatcher, FuzzyMatcher
-from normalization import OccupationNormalizer
-from confidence import ConfidencePolicy
+from fuzzy_searcher.data_models import CandidateMatch, ResolutionDecision, ResolutionResult
+from fuzzy_searcher.matchers import ExactMatcher, AliasMatcher, FuzzyMatcher
+from fuzzy_searcher.normalization import OccupationNormalizer
+from fuzzy_searcher.enums import ResolutionStatus, MatchType
+from fuzzy_searcher.confidence import ConfidencePolicy
+from fuzzy_searcher.validation import InputValidator
+from fuzzy_searcher.scoring import ScorerRegistry
+from fuzzy_searcher.matrics import MetricsTracker
+from fuzzy_searcher.index import OccupationIndex
+from fuzzy_searcher.config import ConfigManager
 from typing import Any, Dict, Optional
-from validation import InputValidator
-from scoring import ScorerRegistry
-from matrics import MetricsTracker
-from index import OccupationIndex
-from config import ConfigManager
 
 class OccupationResolver:
     def __init__(

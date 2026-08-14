@@ -2,8 +2,7 @@
 import re
 import unicodedata
 from typing import Tuple
-
-from core.models import PostProcessorConfig
+from resolver.core.models import PostProcessorConfig
 
 
 class TextNormalizer:

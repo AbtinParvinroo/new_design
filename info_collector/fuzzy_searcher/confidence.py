@@ -1,7 +1,7 @@
 from __future__ import annotations
-from data_models import CandidateMatch, ResolutionDecision
-from enums import ResolutionStatus, MatchType
-from config import ConfigManager
+from fuzzy_searcher.data_models import CandidateMatch, ResolutionDecision
+from fuzzy_searcher.enums import ResolutionStatus, MatchType
+from fuzzy_searcher.config import ConfigManager
 from typing import Sequence
 
 class ConfidencePolicy:

@@ -2,12 +2,10 @@
 import logging
 from pathlib import Path
 from typing import Optional
-
-from core.exceptions import InvalidFileTypeError, FileValidationError
-from core.constants import ALLOWED_TYPES
+from resolver.core.exceptions import InvalidFileTypeError, FileValidationError
+from resolver.core.constants import ALLOWED_TYPES
 
 logger = logging.getLogger(__name__)
-
 
 class MagicDetector:
     @staticmethod

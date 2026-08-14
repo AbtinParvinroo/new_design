@@ -3,18 +3,15 @@ import logging
 import time
 from pathlib import Path
 from typing import Optional, List
-
 from pypdf import PdfReader
 from pypdf.errors import PdfReadError
-
-from core.models import PDFResolverConfig, PDFExtractionResult
-from core.exceptions import InvalidPDFError, EncryptedPDFError, PDFExtractionError
-from validators.pdf_validator import PDFValidator
-from .metadata import PDFMetadataExtractor
-from .normalizer import TextNormalizer
+from resolver.core.models import PDFResolverConfig, PDFExtractionResult
+from resolver.core.exceptions import InvalidPDFError, EncryptedPDFError, PDFExtractionError
+from resolver.validators.pdf_validator import PDFValidator
+from resolver.extractors.pdf.metadata import PDFMetadataExtractor
+from resolver.extractors.pdf.normalizer import TextNormalizer
 
 logger = logging.getLogger(__name__)
-
 
 class PDFResolver:
     def __init__(self, file_path: str | Path, config: Optional[PDFResolverConfig] = None):
